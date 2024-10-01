@@ -5,6 +5,7 @@ export { Subject } from './lib/rx/Subject.js';
  * Socket client -> server
  * */
 export { SocketMessageTypes, TSocketMessageRoute, TSocketMessage } from './shapes/SocketMessageShapes.js';
+export { MoveTypes } from './app/moveTypes.js';
 export { socketMessageShape } from './shapes/SocketMessageShapes.js';
 export { commonResponseShape, TCommonResponse } from './shapes/Common.js';
 
@@ -18,6 +19,7 @@ export { dispatchItemShape, TDispatchItem, TDispatch } from './shapes/DispatchIt
  * */
 export { startRequestShape, TStartRequest } from './server/routes/start-shapes.js';
 export { endRequestShape, TEndRequest } from './server/routes/end-shapes.js';
+export { moveRequestShape, TMoveRequest } from './server/routes/move-shapes.js';
 
 /**
  * Game Response server -> client

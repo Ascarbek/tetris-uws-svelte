@@ -2,13 +2,16 @@
   import Board from '$widgets/game/Board.svelte';
   import Toolbar from '$widgets/game/Toolbar.svelte';
   import type { KeyboardEventHandler } from 'svelte/elements';
+  import { makeMove } from '$features/api/GameApi';
+  import { MoveTypes } from '@my-tetris/backend';
+  import { CurrentSession } from '$stores/Session';
 
   let pressed = false;
 
   const onKeyDown: KeyboardEventHandler<Document> = (e) => {
     if (e.code === 'ArrowLeft' && !pressed) {
       pressed = true;
-      console.log('left');
+      makeMove({ move: MoveTypes.LEFT, time: $CurrentSession });
     }
     if (e.code === 'ArrowRight' && !pressed) {
       pressed = true;

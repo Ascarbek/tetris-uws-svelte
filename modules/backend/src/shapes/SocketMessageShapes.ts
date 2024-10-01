@@ -5,9 +5,7 @@ export enum SocketMessageTypes {
   START,
   RENDER_BOARD,
   END,
-  MOVE_LEFT,
-  MOVE_RIGHT,
-  DROP,
+  MOVE
 }
 
 export const socketMessageShape = z.object({

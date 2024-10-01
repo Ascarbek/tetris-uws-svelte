@@ -6,9 +6,14 @@ const handlers: {
 let START_DELAY = 200;
 
 export const startRunner = (id: string, cb: () => void) => {
+  if (handlers[id]) {
+    clearInterval(handlers[id]);
+  }
   handlers[id] = setInterval(cb, START_DELAY);
 };
 
 export const stopRunner = (id: string) => {
-  clearInterval(handlers[id]);
+  if (handlers[id]) {
+    clearInterval(handlers[id]);
+  }
 };

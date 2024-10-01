@@ -2,21 +2,18 @@ import { SocketMessageTypes, TSocketMessageRoute } from '../../shapes/SocketMess
 import { NotAllowedPlug } from '../services/NotAllowedPlug.js';
 import { startRoute } from '../routes/start-route.js';
 import { endRoute } from '../routes/end-route.js';
+import { moveRoute } from '../routes/move-route.js';
 
 export const IncomingMessageMap: Record<SocketMessageTypes, TSocketMessageRoute> = {
   [SocketMessageTypes.START]: startRoute,
   [SocketMessageTypes.RENDER_BOARD]: NotAllowedPlug,
   [SocketMessageTypes.END]: endRoute,
-  [SocketMessageTypes.MOVE_LEFT]: NotAllowedPlug,
-  [SocketMessageTypes.MOVE_RIGHT]: NotAllowedPlug,
-  [SocketMessageTypes.DROP]: NotAllowedPlug,
+  [SocketMessageTypes.MOVE]: moveRoute,
 };
 
 export const IncomingMessageNames: Record<SocketMessageTypes, string> = {
   [SocketMessageTypes.START]: 'start game',
   [SocketMessageTypes.RENDER_BOARD]: 'render board',
   [SocketMessageTypes.END]: 'end game',
-  [SocketMessageTypes.MOVE_LEFT]: 'move left',
-  [SocketMessageTypes.MOVE_RIGHT]: 'move right',
-  [SocketMessageTypes.DROP]: 'drop',
+  [SocketMessageTypes.MOVE]: 'game move',
 };

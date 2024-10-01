@@ -1,5 +1,6 @@
 import { MessageSender } from '$features/messages/MessageSender';
-import { SocketMessageTypes, Subject, type TRenderBoardRequest } from '@my-tetris/backend';
+import { SocketMessageTypes } from '@my-tetris/backend';
+import type { TMoveRequest, TRenderBoardRequest } from '@my-tetris/backend';
 import { v4 as uid } from 'uuid';
 import type { TEndRequest, TStartRequest } from '@my-tetris/backend';
 import { RenderBoardSubject } from '$features/messages/MessageHandlerMap';
@@ -19,6 +20,14 @@ export const endGame = (params: TEndRequest) => {
   void MessageSender({
     id: uid(),
     type: SocketMessageTypes.END,
+    body: params,
+  });
+};
+
+export const makeMove = (params: TMoveRequest) => {
+  void MessageSender({
+    id: uid(),
+    type: SocketMessageTypes.MOVE,
     body: params,
   });
 };

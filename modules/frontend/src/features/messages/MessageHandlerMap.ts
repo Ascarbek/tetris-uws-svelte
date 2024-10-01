@@ -11,15 +11,13 @@ import { SocketMessageTypes, Subject } from '@my-tetris/backend';
 export const StartSubject = new Subject<TCommonResponse>();
 export const RenderBoardSubject = new Subject<TRenderBoardRequest>();
 export const EndSubject = new Subject<TCommonResponse>();
-export const plug = new Subject();
+export const MoveSubject = new Subject<TCommonResponse>();
 
 const MessageHandlerMap: Record<SocketMessageTypes, ISubject<any>> = {
   [SocketMessageTypes.START]: StartSubject,
   [SocketMessageTypes.RENDER_BOARD]: RenderBoardSubject,
   [SocketMessageTypes.END]: EndSubject,
-  [SocketMessageTypes.MOVE_LEFT]: plug,
-  [SocketMessageTypes.MOVE_RIGHT]: plug,
-  [SocketMessageTypes.DROP]: plug,
+  [SocketMessageTypes.MOVE]: MoveSubject,
 };
 
 export const MessageBroker = (message: TSocketMessage) => {
