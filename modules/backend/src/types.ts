@@ -33,4 +33,5 @@ export { changeNextItemRequestShape, TChangeNextItemRequest } from './server/rou
 export { boardCellDataShape, TBoardCellData } from './shapes/LevelShapes.js';
 export { itemCellDataShape, TItemCellData } from './shapes/LevelShapes.js';
 export { ROW_COUNT, COL_COUNT } from './shapes/LevelShapes.js';
+export { TETROMINO_ROW_COUNT, TETROMINO_COL_COUNT } from './app/tetrominos.js';
 export { emptyBoard, emptyItem } from './shapes/LevelShapes.js';

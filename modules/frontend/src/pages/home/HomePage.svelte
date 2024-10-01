@@ -5,6 +5,7 @@
   import { makeMove } from '$features/api/GameApi';
   import { MoveTypes } from '@my-tetris/backend';
   import { CurrentSession } from '$stores/Session';
+  import NextItem from '$widgets/game/NextItem.svelte';
 
   let pressed = false;
 
@@ -37,6 +38,9 @@
 <div class="flex items-center justify-center h-full">
   <div class="flex flex-col items-center gap-8">
     <Toolbar />
-    <Board />
+    <div class="flex items-start gap-8">
+      <Board />
+      <NextItem />
+    </div>
   </div>
 </div>

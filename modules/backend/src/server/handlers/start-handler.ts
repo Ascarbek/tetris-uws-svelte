@@ -3,14 +3,17 @@ import { TCommonResponse } from '../../shapes/Common.js';
 import { startRunner, stopRunner } from '../../app/runner.js';
 import { TDispatch } from '../../shapes/DispatchItems.js';
 import { SocketMessageTypes } from '../../shapes/SocketMessageShapes.js';
-import { getBoard, getNextItem, newBoard } from '../../app/gameSession.js';
+import { getBoard, getNextItem, newBoard, updateNextItem } from '../../app/gameSession.js';
 import { gameTick } from '../../app/gameTick.js';
+import { tArray } from '../../app/tetrominos.js';
 
 export const startHandler: (params: TStartRequest, dispatch: TDispatch) => Promise<TCommonResponse> = async (
   { time },
   dispatch
 ) => {
   newBoard(time.toString());
+  const nextTetronimo = tArray[Math.floor(Math.random() * tArray.length)];
+  updateNextItem(time.toString(), nextTetronimo);
 
   startRunner(time.toString(), () => {
     const status = gameTick(time.toString());
