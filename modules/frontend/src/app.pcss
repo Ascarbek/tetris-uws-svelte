@@ -1,0 +1,36 @@
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+input:focus,
+button,
+button:focus,
+select,
+select:focus,
+textarea,
+textarea:focus {
+  outline: 0;
+}
+
+input,
+textarea {
+  background: transparent;
+}
+
+* {
+  touch-action: manipulation;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}

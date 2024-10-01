@@ -1,0 +1,21 @@
+{
+  "name": "my-tetris",
+  "version": "1.0.0",
+  "description": "Project to demonstrate usage of uWebsocket and Svelte in tetris game",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ascarbek/tetris-uws-svelte"
+  },
+  "author": {
+    "name": "Askarbek Zadauly",
+    "email": "ascarbek@gmail.com"
+  },
+  "workspaces": ["modules/*"],
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "prettier-plugin-svelte": "3.2.2",
+    "prettier-plugin-tailwindcss": "0.4.1"
+  }
+}
