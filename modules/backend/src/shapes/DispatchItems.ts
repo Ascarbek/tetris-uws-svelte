@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { SocketMessageTypes } from './SocketMessageShapes.js';
-import { renderBoardRequestShape } from '../server/routes/render-board-route.js';
+import { renderBoardRequestShape } from '../server/routes/render-board-shapes.js';
 
 export const dispatchItemShape = z.discriminatedUnion('type', [
   z.object({

@@ -1,11 +1,12 @@
 import { SocketMessageTypes, TSocketMessageRoute } from '../../shapes/SocketMessageShapes.js';
 import { NotAllowedPlug } from '../services/NotAllowedPlug.js';
 import { startRoute } from '../routes/start-route.js';
+import { endRoute } from '../routes/end-route.js';
 
 export const IncomingMessageMap: Record<SocketMessageTypes, TSocketMessageRoute> = {
   [SocketMessageTypes.START]: startRoute,
   [SocketMessageTypes.RENDER_BOARD]: NotAllowedPlug,
-  [SocketMessageTypes.END]: NotAllowedPlug,
+  [SocketMessageTypes.END]: endRoute,
   [SocketMessageTypes.MOVE_LEFT]: NotAllowedPlug,
   [SocketMessageTypes.MOVE_RIGHT]: NotAllowedPlug,
   [SocketMessageTypes.DROP]: NotAllowedPlug,
