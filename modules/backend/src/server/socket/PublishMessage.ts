@@ -11,5 +11,5 @@ export const PublishMessage: (params: { message_type: SocketMessageTypes; reques
     type: message_type,
     body: request,
   };
-  SocketServer.publish('some/public/topic', JSON.stringify(message));
+  SocketServer.publish('mainTopic', JSON.stringify(message));
 };

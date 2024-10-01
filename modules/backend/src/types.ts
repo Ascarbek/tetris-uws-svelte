@@ -27,5 +27,6 @@ export { renderBoardRequestShape, TRenderBoardRequest } from './server/routes/re
 /**
  * Game Objects
  * */
-export { levelCellDataShape, TLevelCellData } from './shapes/LevelShapes.js';
+export { boardCellDataShape, TBoardCellData } from './shapes/LevelShapes.js';
 export { ROW_COUNT, COL_COUNT } from './shapes/LevelShapes.js';
+export { emptyBoard } from './shapes/LevelShapes.js';
