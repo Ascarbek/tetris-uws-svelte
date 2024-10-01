@@ -91,7 +91,11 @@ export const moveRotate: (board: TBoardCellData) => TBoardCellData = (board) => 
         offset = TETROMINO_COL_COUNT - emptyColumns - (COL_COUNT - minCol);
       }
       if (minCol + j - offset < COL_COUNT) {
-        board[(minRow + i) * COL_COUNT + minCol + j - offset] = rotated[(i + emptyRows) * TETROMINO_COL_COUNT + j];
+        if (board[(minRow + i) * COL_COUNT + minCol + j - offset] === 0) {
+          board[(minRow + i) * COL_COUNT + minCol + j - offset] = rotated[(i + emptyRows) * TETROMINO_COL_COUNT + j];
+        } else {
+          return initialBoard;
+        }
       }
     }
   }
