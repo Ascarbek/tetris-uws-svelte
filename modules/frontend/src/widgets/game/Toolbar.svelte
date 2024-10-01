@@ -1,14 +1,15 @@
 <script lang="ts">
-  import { endGame, startGame } from '$features/api/GameApi';
-  import { CurrentSession } from '$stores/Session';
+  import { stopGame, startGame } from '$features/api/GameApi';
+  import { CurrentSession, IsGameOver } from '$stores/Session';
 
   const onStartClick = () => {
     $CurrentSession = new Date().getTime();
+    $IsGameOver = false;
     startGame({ time: $CurrentSession });
   };
 
   const onEndClick = () => {
-    endGame({ time: $CurrentSession });
+    stopGame({ time: $CurrentSession });
   };
 </script>
 

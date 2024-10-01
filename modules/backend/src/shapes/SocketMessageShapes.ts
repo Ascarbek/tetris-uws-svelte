@@ -3,9 +3,11 @@ import { TDispatch } from './DispatchItems.js';
 
 export enum SocketMessageTypes {
   START,
+  STOP,
   RENDER_BOARD,
-  END,
-  MOVE
+  MOVE,
+  CHANGE_NEXT_ITEM,
+  GAME_OVER,
 }
 
 export const socketMessageShape = z.object({

@@ -25,10 +25,12 @@ export { moveRequestShape, TMoveRequest } from './server/routes/move-shapes.js';
  * Game Response server -> client
  * */
 export { renderBoardRequestShape, TRenderBoardRequest } from './server/routes/render-board-shapes.js';
+export { changeNextItemRequestShape, TChangeNextItemRequest } from './server/routes/change-next-item-shapes.js';
 
 /**
  * Game Objects
  * */
 export { boardCellDataShape, TBoardCellData } from './shapes/LevelShapes.js';
+export { itemCellDataShape, TItemCellData } from './shapes/LevelShapes.js';
 export { ROW_COUNT, COL_COUNT } from './shapes/LevelShapes.js';
-export { emptyBoard } from './shapes/LevelShapes.js';
+export { emptyBoard, emptyItem } from './shapes/LevelShapes.js';

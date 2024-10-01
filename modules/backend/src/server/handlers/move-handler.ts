@@ -2,7 +2,7 @@ import { TMoveRequest } from '../routes/move-shapes.js';
 import { TCommonResponse } from '../../shapes/Common.js';
 import { MoveTypes } from '../../app/moveTypes.js';
 import { moveLeft } from '../../app/moveLeft.js';
-import { getBoard, updateBoard } from '../../app/sessionBoard.js';
+import { getBoard, updateBoard } from '../../app/gameSession.js';
 import { moveRight } from '../../app/moveRight.js';
 import { moveDown } from '../../app/moveDown.js';
 import { moveRotate } from '../../app/moveRotate.js';
