@@ -15,11 +15,11 @@
     }
     if (e.code === 'ArrowRight' && !pressed) {
       pressed = true;
-      console.log('right');
+      makeMove({ move: MoveTypes.RIGHT, time: $CurrentSession });
     }
     if (e.code === 'Space' && !pressed) {
       pressed = true;
-      console.log('space');
+      makeMove({ move: MoveTypes.DROP, time: $CurrentSession });
     }
   };
 
