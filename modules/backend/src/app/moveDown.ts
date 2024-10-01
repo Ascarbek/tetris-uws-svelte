@@ -3,6 +3,11 @@ import { COL_COUNT, ROW_COUNT, TBoardCellData } from '../shapes/LevelShapes.js';
 export const moveDown: (inputBoard: TBoardCellData) => TBoardCellData = (inputBoard) => {
   const board = inputBoard;
 
+  const isThereMoving = board.some((c) => c < 0);
+  if (!isThereMoving) {
+    return board;
+  }
+
   let canMove = true;
   // skip first row
   for (let i = ROW_COUNT - 1; i > 0; i--) {

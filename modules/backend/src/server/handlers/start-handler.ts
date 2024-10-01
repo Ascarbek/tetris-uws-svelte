@@ -9,8 +9,7 @@ import { gameTick } from '../../app/gameTick.js';
 export const startHandler: (
   params: TStartRequest,
   dispatch: TDispatch,
-  publish: TDispatch
-) => Promise<TCommonResponse> = async ({ time }, dispatch, publish) => {
+) => Promise<TCommonResponse> = async ({ time }, dispatch, ) => {
   newBoard(time.toString());
 
   startRunner(time.toString(), () => {

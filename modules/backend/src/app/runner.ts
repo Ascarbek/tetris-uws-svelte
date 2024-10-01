@@ -3,7 +3,7 @@ const handlers: {
   [id: string]: NodeJS.Timeout;
 } = {};
 
-let START_DELAY = 200;
+let START_DELAY = 700;
 
 export const startRunner = (id: string, cb: () => void) => {
   if (handlers[id]) {

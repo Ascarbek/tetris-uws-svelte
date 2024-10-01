@@ -17,9 +17,13 @@
       pressed = true;
       makeMove({ move: MoveTypes.RIGHT, time: $CurrentSession });
     }
-    if (e.code === 'Space' && !pressed) {
+    if (e.code === 'ArrowDown' && !pressed) {
       pressed = true;
       makeMove({ move: MoveTypes.DROP, time: $CurrentSession });
+    }
+    if (e.code === 'ArrowUp' && !pressed) {
+      pressed = true;
+      makeMove({ move: MoveTypes.ROTATE, time: $CurrentSession });
     }
   };
 
