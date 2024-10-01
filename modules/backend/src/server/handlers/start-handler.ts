@@ -13,11 +13,12 @@ export const startHandler: (
 ) => Promise<TCommonResponse> = async ({ time }, dispatch, publish) => {
   newBoard(time.toString());
 
-  startRunner(() => {
+  startRunner(time.toString(), () => {
     gameTick(time.toString());
     dispatch({
       type: SocketMessageTypes.RENDER_BOARD,
       body: {
+        time: time,
         cells: getBoard(time.toString()),
       },
     });

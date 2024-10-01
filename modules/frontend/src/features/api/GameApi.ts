@@ -4,6 +4,8 @@ import { v4 as uid } from 'uuid';
 import type { TEndRequest, TStartRequest } from '@my-tetris/backend';
 import { RenderBoardSubject } from '$features/messages/MessageHandlerMap';
 import { BoardCells } from '$stores/Level';
+import { CurrentSession } from '$stores/Session';
+import { get } from 'svelte/store';
 
 export const startGame = (params: TStartRequest) => {
   void MessageSender({
@@ -22,7 +24,10 @@ export const endGame = (params: TEndRequest) => {
 };
 
 const onRenderBoard = (response: TRenderBoardRequest) => {
-  BoardCells.set(response.cells);
+  const currentSession = get(CurrentSession);
+  if (currentSession === response.time) {
+    BoardCells.set(response.cells);
+  }
 };
 
 RenderBoardSubject.subscribe(onRenderBoard);

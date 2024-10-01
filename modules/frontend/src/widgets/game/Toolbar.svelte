@@ -1,14 +1,14 @@
 <script lang="ts">
   import { endGame, startGame } from '$features/api/GameApi';
+  import { CurrentSession } from '$stores/Session';
 
   const onStartClick = () => {
-    console.log('');
-    startGame({ time: new Date().getTime() });
+    $CurrentSession = new Date().getTime();
+    startGame({ time: $CurrentSession });
   };
 
   const onEndClick = () => {
-    console.log('');
-    endGame({});
+    endGame({ time: $CurrentSession });
   };
 </script>
 

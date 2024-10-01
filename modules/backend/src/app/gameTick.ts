@@ -12,7 +12,7 @@ export const gameTick: (id: string) => void = (id) => {
   updateBoard(id, movedBoard);
   const isThereMoving = movedBoard.some((c) => c < 0);
   if (!isThereMoving) {
-    const addedBoard = addTetromino(movedBoard, tArray[Math.floor(Math.random() * 5)]);
+    const addedBoard = addTetromino(movedBoard, tArray[Math.floor(Math.random() * tArray.length)]);
     updateBoard(id, addedBoard);
   }
 };

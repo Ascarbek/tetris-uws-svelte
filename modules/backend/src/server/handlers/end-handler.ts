@@ -7,8 +7,8 @@ export const endHandler: (
   params: TEndRequest,
   dispatch: TDispatch,
   publish: TDispatch
-) => Promise<TCommonResponse> = async (p, dispatch, publish) => {
-  stopRunner();
+) => Promise<TCommonResponse> = async ({ time }, dispatch, publish) => {
+  stopRunner(time.toString());
   return {
     success: true,
   };
