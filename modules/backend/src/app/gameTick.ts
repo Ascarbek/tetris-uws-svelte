@@ -2,22 +2,24 @@ import { getBoard, getNextItem, updateBoard, updateNextItem } from './gameSessio
 import { moveDown } from './moveDown.js';
 import { addTetromino } from './addTetromino.js';
 import { tArray } from './tetrominos.js';
+import { clearFullLines } from './clearFullLines.js';
 
 export const gameTick: (id: string) => 'NORMAL' | 'GAME_OVER' | 'CHANGE_ITEM' = (id) => {
-  const board = getBoard(id);
+  let board = getBoard(id);
 
-  const movedBoard = moveDown(board);
-  updateBoard(id, movedBoard);
+  board = clearFullLines(board);
+  board = moveDown(board);
+  updateBoard(id, board);
 
-  if (!movedBoard.some((c) => c < 0)) {
+  if (!board.some((c) => c < 0)) {
     const nextTetronimo = getNextItem(id);
-    const addedBoard = addTetromino(movedBoard, nextTetronimo);
-    updateBoard(id, addedBoard);
+    board = addTetromino(board, nextTetronimo);
+    updateBoard(id, board);
 
     const newTetronimo = tArray[Math.floor(Math.random() * tArray.length)];
     updateNextItem(id, newTetronimo);
 
-    if (!addedBoard.some((c) => c < 0)) {
+    if (!board.some((c) => c < 0)) {
       return 'GAME_OVER';
     }
     return 'CHANGE_ITEM';
