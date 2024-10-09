@@ -21,5 +21,5 @@ export type TSocketMessage = z.infer<typeof socketMessageShape>;
 export type TSocketMessageRoute = {
   input: z.AnyZodObject;
   output: z.AnyZodObject | z.ZodDiscriminatedUnion<any, any> | z.ZodVoid;
-  handler: (params: any, dispatch: TDispatch, publish: TDispatch) => any;
+  handler: (params: any, dispatch: TDispatch) => any;
 };
